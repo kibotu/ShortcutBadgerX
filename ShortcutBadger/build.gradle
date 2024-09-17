@@ -1,12 +1,13 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
-
-    compileSdkVersion 32
+    compileSdk 35
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 32
+        namespace "me.leolin.shortcutbadger"
+        minSdk 14
+        targetSdk 35
         consumerProguardFiles 'proguard-rules.pro'
     }
 
@@ -14,10 +15,31 @@ android {
         abortOnError false
     }
 
-}
+    // region java compile options
 
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // endregion
+
+    // region kotlin compile options
+
+    kotlinOptions {
+        jvmTarget = "17"
+        allWarningsAsErrors = false
+        kotlinOptions.verbose = true
+        freeCompilerArgs += [
+                "-Xjvm-default=all-compatibility"
+        ]
+    }
+
+    // endregion
 }

@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 32
+    compileSdk 35
 
+    namespace 'me.leolin.shortcutbadger.example'
     defaultConfig {
         applicationId "me.leolin.shortcutbadger.example"
-        minSdkVersion 16
-        targetSdkVersion 32
+        minSdk 23
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
@@ -15,11 +17,35 @@ android {
         abortOnError false
     }
 
+    // region java compile options
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // endregion
+
+    // region kotlin compile options
+
+    kotlinOptions {
+        jvmTarget = "17"
+        allWarningsAsErrors = false
+        kotlinOptions.verbose = true
+        freeCompilerArgs += [
+                "-Xjvm-default=all-compatibility"
+        ]
+    }
+
+    // endregion
 }
 
-
-
 dependencies {
-//    implementation 'me.leolin:ShortcutBadger:1.0.+@aar'
     implementation project(':ShortcutBadger')
 }

@@ -1,4 +1,4 @@
-ShortcutBadgerX: [![](https://jitpack.io/v/rlgo/ShortcutBadgerX.svg)](https://jitpack.io/#rlgo/ShortcutBadgerX) [![Android CI](https://github.com/rlgo/ShortcutBadgerX/actions/workflows/android.yml/badge.svg)](https://github.com/rlgo/ShortcutBadgerX/actions/workflows/android.yml)
+ShortcutBadgerX: [![](https://jitpack.io/v/kibotu/ShortcutBadgerX.svg)](https://jitpack.io/#kibotu/ShortcutBadgerX) [![Android CI](https://github.com/rlgo/ShortcutBadgerX/actions/workflows/android.yml/badge.svg)](https://github.com/rlgo/ShortcutBadgerX/actions/workflows/android.yml)
 ===================================
 Helper library to set android app icon badge count for different phone brand.\
 Forked from [leolin310148/ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) which seems no longer maintained.
@@ -15,7 +15,7 @@ Usage
 2. Add dependencies for ShortcutBadgerX.
     ```gradle     
         dependencies {
-            implementation 'com.github.rlgo:ShortcutBadgerX:1.2.1'
+            implementation 'com.github.kibotu:ShortcutBadgerX:1.2.2'
         }
     ```
 3. Add the codes below:
