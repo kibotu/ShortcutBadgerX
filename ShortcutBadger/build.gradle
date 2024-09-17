@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         namespace "me.leolin.shortcutbadger"
-        minSdk 14
+        minSdk 23
         targetSdk 35
         consumerProguardFiles 'proguard-rules.pro'
     }
